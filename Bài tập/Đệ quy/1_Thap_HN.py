@@ -1,12 +1,11 @@
-x = 1
-
-def thap_ha_noi(h, initial, end, aux):
+x=1
+def thap_ha_noi(h, nguon, dich, trung_gian):
     global x
     if h >= 1:
-        thap_ha_noi(h - 1, initial, aux, end)
-        print(x, ": ", "Move from ", initial, " to ", end)
+        thap_ha_noi(h - 1, nguon, trung_gian, dich)
+        print(x, ": ", "Di chuyển từ ", nguon, " đến ", dich)
         x += 1
-        thap_ha_noi(h - 1, aux, end, initial)
+        thap_ha_noi(h - 1, trung_gian, dich, nguon)
 
-
-thap_ha_noi(3, 1, 2, 3)
+n = int(input("Nhập kích cỡ n: "))
+thap_ha_noi(n,"A","B","C")
